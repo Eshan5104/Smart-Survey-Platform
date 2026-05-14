@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- 1. Google Translate Clean-up --- */
+
+/* Force page to stay at the top and remove Google's 40px gap */
+body {
+    top: 0px !important;
+    position: static !important;
+}
+
+/* Hide Google Translate UI elements (banners, icons, and frames) */
+.goog-te-banner-frame.skiptranslate, 
+.goog-te-gadget-icon, 
+.goog-te-gadget-simple img,
+.goog-te-menu-value,
+.skiptranslate {
+    display: none !important;
+}
+
+/* Hide the "Original Text" tooltip popup on hover */
+#goog-gt-tt, 
+.goog-te-balloon-frame, 
+#goog-gt-tt.skiptranslate {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Remove yellow highlight on translated text hover */
+.goog-text-highlight {
+    background: none !important;
+    box-shadow: none !important;
+}
+
+/* --- 2. Animations for Skeleton Loaders --- */
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* --- 3. Custom CAPTCHA UI Styling --- */
+
+.captcha-box {
+    letter-spacing: 0.5em;
+    background-image: linear-gradient(45deg, #f3f4f6 25%, transparent 25%, transparent 50%, #f3f4f6 50%, #f3f4f6 75%, transparent 75%, transparent);
+    background-size: 4px 4px;
+}
+
+/* Line-through for captcha text to make it look "secure" */
+.captcha-text {
+    text-decoration: line-through;
+    text-decoration-color: rgba(0, 0, 0, 0.2);
+    text-decoration-thickness: 2px;
+}

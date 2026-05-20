@@ -1,2 +1,2 @@
 Project done by - Aniket Prajapati
-                  Eshan Bhakare
+                 and  Eshan Bhakare

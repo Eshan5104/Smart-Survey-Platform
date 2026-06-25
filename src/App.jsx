@@ -1045,7 +1045,7 @@ function ResponsesView({ survey, setView, appId }) {
         const csvRows = responses.map(r => {
             const dateStr = r.submittedAt?.toDate ? r.submittedAt.toDate().toLocaleString('en-IN') : 'Unknown';
             const citizenId = `****${r.citizenId ? r.citizenId.slice(-4) : 'XXXX'}`;
-            const rowData = [citizenId, dateStr];
+            const rowData = [`"${citizenId}"`, `"${dateStr}"`];
             questions.forEach(q => {
                 let ans = r.answers?.[q.id] || 'No Answer';
                 if (Array.isArray(ans)) ans = ans.join('; '); 
